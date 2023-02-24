@@ -13,7 +13,7 @@ export default function Features1() {
                 </div>
                 <div className="section_title_wrapper text-center wow fadeInUp mb-70" data-wow-delay="0.3s"
                     style={{"visibility":"visible","animationDelay":"0.3s","animationName":"fadeInUp"}}>
-                    <h2 className="section-title">Write a catchphrase <br/> or add something similar</h2>
+                    <h2 className="section-title">Unlock your artistic potential with<br/> Artify: Where creativity meets AI!</h2>
                 </div>
                 <div className="row">
                     <div className="col-xl-3 col-lg-3 col-md-6">
