@@ -6,6 +6,7 @@ import FeaturesContent from '../components/Home1/FeaturesContent'
 import Testimonial1 from '../components/Home1/Testimonial1'
 import Try1 from '../components/Home1/Try1'
 import Layout1 from '../layouts/Layout1'
+import pkg from "../package.json";
 
 export default function Home() {
 
