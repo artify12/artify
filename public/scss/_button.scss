@@ -1,0 +1,78 @@
+/*
+==========================================
+1. Button
+==========================================
+*/
+
+/* button style */
+.bt-btn {
+	background: #3e976c;
+	color: #fff;
+	padding: 20px 35px;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 13px;
+	border-radius: 30px;
+	border: 0;
+	display: inline-block;
+	transition: .3s;
+	line-height: 1;
+	&:hover {
+		background: #223645;
+		color: #fff;
+	}
+}
+
+.bt-btn-black {
+	background: #223645;
+	color: #fff;
+	&:hover {
+		background: #3e976c;
+		color: #fff;
+	}
+}
+
+.swiper{
+	padding-bottom: 45px !important;
+}
+.swiper .swiper-pagination-bullet{
+	display: inline-block;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    text-indent: -9999px;
+    // background-color: #cfd3da !important;
+    border: 1px solid transparent;
+    position: relative;
+	margin: 0 8px !important;
+}
+.swiper .swiper-pagination-bullet::before{
+	position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    display: inline-table;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #e39d02;
+    opacity: 0;
+    transition: 0.3s;
+}
+.swiper .swiper-pagination-bullet-active{
+	position: relative;
+	background: #e39d02 !important;
+
+}
+.swiper .swiper-pagination-bullet-active:focus{
+	outline: none;
+
+}
+.swiper .swiper-pagination-bullet-active::before{
+	opacity: 1;
+
+}
