@@ -24,8 +24,8 @@ export default function NavBarMobile({ metismenu }) {
                             <li><Link legacyBehavior href="https://twitter.com/artifyerc"><a>Twitter</a></Link></li>
                             <li><Link legacyBehavior href="https://medium.com/@artifylabs"><a>Medium</a></Link> </li>
                             <li><Link legacyBehavior href="https://artify.gitbook.io/artify-whitepaper/"><a>Whitepaper</a></Link> </li>
-                            <li><Link legacyBehavior href="https://dextools.io/"><a>Dextools</a></Link> </li>
-                            <li><Link legacyBehavior href="https://etherscan.io/"><a>Contract</a></Link></li>
+                            <li><Link legacyBehavior href="https://www.dextools.io/app/en/ether/pair-explorer/0xf43e889444e95a0429c32b0b601dc16edf90fdbf"><a>Dextools</a></Link> </li>
+                            <li><Link legacyBehavior href="https://etherscan.io/address/0xa41161af8d4ee421ba5fed4328f2b12034796a21"><a>Contract</a></Link></li>
                         </ul>
                     </li>
                 </ul>
