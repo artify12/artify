@@ -33,7 +33,7 @@ export default async function handler(req) {
   // Fallback to a default image
   if (!inputImageURL) {
     inputImageURL =
-      "https://upcdn.io/FW25b4F/raw/uploads/scribble-diffusion/1.0.0/2023-02-17/scribble_input_2JrhzKQH.png";
+      "https://i.pinimg.com/564x/01/d5/23/01d523e4c043c9556d7b35fff2c11d7c.jpg";
     outputImageURL =
       "https://replicate.delivery/pbxt/fX5WyhTJ2LQ7ZC4Pq1TLZaHfLdEciFyfmKxU7FN8WLZhhaeBB/output_1.png";
   }

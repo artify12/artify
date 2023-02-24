@@ -97,9 +97,9 @@ export default function Draw() {
         <meta property="og:description" content={pkg.appMetaDescription} />
         <meta
           property="og:image"
-          content={`${HOST}/og-b7xwc4g4wrdrtneilxnbngzvti.png`}
+          content={`${HOST}/preview.png`}
         />
-        <title>{pkg.appName}</title>s
+        <title>{pkg.appName}</title>
       </Head>
       <Header style1 style={{ paddingBottom: '120px !important;' }} />
       <main className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "120px !important" }}>
