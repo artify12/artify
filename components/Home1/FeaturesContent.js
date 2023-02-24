@@ -18,7 +18,7 @@ export default function FeaturesContent() {
                                     <p>With Artify, you can unleash your creativity and experience the magic of AI-generated art. Our platform makes it
                                         easy to create stunning, one-of-a-kind artworks that are unique to you. Whether you want to create
                                         a custom piece for your home or sell your art on our marketplace, Artify has everything you need.</p>
-                                    <Link legacyBehavior href="https://medium.com/@artifylabs" target={'_blank'}><a>Read More<i className="fal fa-arrow-right"></i></a></Link>
+                                    <Link legacyBehavior href="https://medium.com/@artifylabs/artify-letting-your-imagination-bring-life-to-the-work-of-your-hand-b72124ecbfe9" target={'_blank'}><a>Read More<i className="fal fa-arrow-right"></i></a></Link>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ export default function FeaturesContent() {
                                     artists as they are able to maximize their profits by avoiding high transaction fees. Additionally, our Polygon integration
                                      ensures that artists are able to easily and quickly mint their NFTs without any delays, allowing them to
                                      focus on creating and selling their artwork rather than worrying about technical barriers.</p>
-                                    <Link legacyBehavior href="https://medium.com/@artifylabs" target="_blank"><a>Read More<i className="fal fa-arrow-right"></i></a></Link>
+                                    <Link legacyBehavior href="https://medium.com/@artifylabs/artify-the-gas-less-way-of-sharing-what-needs-to-be-shown-5405defd39c1" target="_blank"><a>Read More<i className="fal fa-arrow-right"></i></a></Link>
                                 </div>
                             </div>
                         </div>
