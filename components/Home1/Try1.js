@@ -21,7 +21,7 @@ export default function Try1() {
                                 <div className="col-xl-5 col-lg-5">
                                     <div className="try_btn_center">
                                         <div className="try_btn">
-                                            <Link legacyBehavior href="/draw"><a className="btn btnfree">Free Trail</a></Link>
+                                            <Link legacyBehavior href="/draw"><a className="btn btnfree">Free Trial</a></Link>
                                         </div>
                                     </div>
                                 </div>
