@@ -17,10 +17,10 @@ export default function Footer({className}) {
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="footer_social f-right">
                     <span>Follow us</span>
-                    <Link legacyBehavior href="#"><a><i className="fab fa-twitter"></i></a></Link>
-                    <Link legacyBehavior href="#"><a><i className="fab fa-pinterest-p"></i></a></Link>
-                    <Link legacyBehavior href="#"><a><i className="fab fa-vimeo-v"></i></a></Link>
-                    <Link legacyBehavior href="#"><a><i className="fab fa-facebook-f"></i></a></Link>
+                    <Link legacyBehavior href="https://t.me/artifylabs"><a><i className="fab fa-telegram"></i></a></Link>
+                    <Link legacyBehavior href="https://twitter.com/artifyerc"><a><i className="fab fa-twitter"></i></a></Link>
+                    <Link legacyBehavior href="https://medium.com/@artifylabs"><a><i className="fab fa-medium"></i></a></Link>
+                    <Link legacyBehavior href="https://artify.gitbook.io/artify-whitepaper/"><a><i className="fab fa-github"></i></a></Link>
                   </div>
                 </div>
               </div>

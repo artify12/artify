@@ -76,9 +76,6 @@ export default function Testimonials() {
                                                     <div className="font-extrabold text-xl text-black ">
                                                         Stage: {item.stage}
                                                     </div>
-                                                    <div className="text black font-normal text-xl pr-8">
-                                                        <a href={item.link}><span>Read More</span></a>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

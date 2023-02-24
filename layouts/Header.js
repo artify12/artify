@@ -23,7 +23,7 @@ export default function Header() {
                             </div>
                             <div className="col-xl-10 col-lg-10 col-md-4 col-8 d-none d-md-block">
                                 <div className="header-btn f-right d-none d-md-block">
-                                    <Link legacyBehavior href="/"><a className="btn"><i className="fal fa-coin"></i>Buy $AFY</a></Link>
+                                    <Link legacyBehavior href="app.uniswap.org"><a className="btn"><i className="fal fa-coin"></i>Buy $AFY</a></Link>
                                 </div>
                                 <div className="main-menu colormenu d-none d-lg-block">
                                     <NavBar />

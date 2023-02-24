@@ -19,40 +19,40 @@ export default function Features1() {
                     <div className="col-xl-3 col-lg-3 col-md-6">
                         <div className="feabox mb-30">
                             <div className="feabox__img mb-50">
-                                <img src="/img/fetures/Forma1.png" alt="form1" />
+                            <i className="fas fa-hand-holding-usd text-white text-3xl"></i>
                             </div>
                             <div className="feabox__content">
-                                <h3 className="feabox-title tcolor0">Good thing 1</h3>
+                                <h3 className="feabox-title tcolor0">No Minting Fees</h3>
                             </div>
                         </div>
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-6">
                         <div className="feabox mb-30 clr1">
                             <div className="feabox__img img1 mb-50">
-                                <img src="/img/fetures/Forma2.png" alt="form2" />
+                            <i className="fas fa-infinity text-white text-3xl"></i>
                             </div>
                             <div className="feabox__content">
-                                <h3 className="feabox-title tcolor1">Good thing 2</h3>
+                                <h3 className="feabox-title tcolor1">Seamless Experience</h3>
                             </div>
                         </div>
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-6">
                         <div className="feabox mb-30 clr2">
                             <div className="feabox__img img2 mb-50">
-                                <img src="/img/fetures/Forma3.png" alt="form3" />
+                            <i className="fas fa-paint-brush text-white text-3xl"></i>
                             </div>
                             <div className="feabox__content">
-                                <h3 className="feabox-title tcolor2">Good thing 3</h3>
+                                <h3 className="feabox-title tcolor2">Focus on Creating</h3>
                             </div>
                         </div>
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-6">
                         <div className="feabox mb-30 clr3">
                             <div className="feabox__img img3 mb-50">
-                                <img src="/img/fetures/Forma4.png" alt="form4" />
+                            <i className="fas fa-handshake text-white text-3xl"></i>
                             </div>
                             <div className="feabox__content">
-                                <h3 className="feabox-title tcolor3">Good thing 4</h3>
+                                <h3 className="feabox-title tcolor3">Accessible</h3>
                             </div>
                         </div>
                     </div>

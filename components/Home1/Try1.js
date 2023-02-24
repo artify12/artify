@@ -16,8 +16,7 @@ export default function Try1() {
                             <div className="row">
                                 <div className="col-xl-7 col-lg-7">
                                     <h2>Try Our App</h2>
-                                    <p>Horse play argy-bargy me old mucker boot bog show off show off pick your nose and
-                                        blow off sloshed my cack buggered.</p>
+                                    <p>Early stages of our app are completely free to use. In the later stages, you will be able to choose from different subscription plans depending on which one suits your needs the best.</p>
                                 </div>
                                 <div className="col-xl-5 col-lg-5">
                                     <div className="try_btn_center">

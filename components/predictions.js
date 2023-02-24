@@ -283,7 +283,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
           </div>
         )}
         {showLinkToNewScribble && (
-          <Link href="/">
+          <Link href="/draw">
             <button className="lil-button" onClick={copyLink}>
               <PlusCircleIcon className="icon" />
               Create new art
