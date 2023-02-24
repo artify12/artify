@@ -38,8 +38,8 @@ export default function FeaturesContent() {
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6 col-lg-6 col-md-12">
-                            <div className="app-image wow fadeInUp" data-wow-delay=".3s"
-                                style={{ "visibility": "visible", "animationDelay": "0.2s", "animationName": "fadeInUp" }}>
+                            <div className="app-image wow fadeInUp hidden lg:block" data-wow-delay=".3s"
+                                style={{ "animationDelay": "0.2s", "animationName": "fadeInUp" }}>
                                 <img src="/img/about/about2.png" alt="" />
                             </div>
                         </div>

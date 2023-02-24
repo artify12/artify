@@ -19,7 +19,6 @@ export default function Home() {
         <Features1/>
         <FeaturesContent/>
         <Testimonials/>
-        <Download1/>
         <Testimonial1/>
         <Try1/>
       </Layout1>

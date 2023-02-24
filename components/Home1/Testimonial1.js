@@ -11,43 +11,40 @@ import 'swiper/css/scrollbar';
 export default function Testimonial1() {
     const testimonial = [
         {
-            message: "Matie boy your round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo  super.",
+            message: "a man with a hat blowing smoke",
             img: (
                 <Image
-                    src="/img/testimonial/test1.jpg"
+                    src="/img/about/smoke.png"
                     layout=""
-                    width={63}
-                    height={61}
+                    width={300}
+                    height={500}
                 />
             ),
-            name: "Hilary Ouse",
-            designation: "Ui/Ux Designer"
+            name: "https://artifylabs.io/artifacts/bphskwboi5cczkmg7cyzaqb5ia",
         },
         {
-            message: "Matie boy iyour round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo;t super.",
+            message: "mountain with a creek and sun setting behind it",
             img: (
                 <Image
-                    src="/img/testimonial/test2.jpg"
+                    src="/img/about/mountain.png"
                     layout=""
-                    width={63}
-                    height={61}
+                    width={300}
+                    height={500}
                 />
             ),
-            name: "Hilary Ouse",
-            designation: "Ui/Ux Designer"
+            name: "https://artifylabs.io/artifacts/auzt5l4cujc3zduncywmbyunda",
         },
         {
-            message: "Matie boy itour round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo ;t super.",
+            message: "futuristic cybertruck",
             img: (
                 <Image
-                    src="/img/testimonial/test3.jpg"
+                    src="/img/about/cybertruck.png"
                     layout=""
-                    width={63}
-                    height={61}
+                    width={300}
+                    height={500}
                 />
             ),
-            name: "Hilary Ouse",
-            designation: "Ui/Ux Designer"
+            name: "https://artifylabs.io/artifacts/vlr4vyie4fabxc5wpuara5dun4"
         }
     ]
     return (
@@ -62,7 +59,7 @@ export default function Testimonial1() {
                     <div className="row">
                         <div className="col-xl-12">
                             <div className="section-wrapper">
-                                <h2 className="section-title">Id put some previews here<br /> with links to them</h2>
+                                <h2 className="section-title">Preview of Artify Creations</h2>
                             </div>
                         </div>
                     </div>
@@ -94,15 +91,14 @@ export default function Testimonial1() {
                             {testimonial.map((item, i) => (
                                 <SwiperSlide key={i}>
                                         <div className="testimonial-item pt-55">
-                                            <div className="item">
-                                                <p>{item.message}</p>
-                                                <div className="clients_meta">
-                                                    <div className="clients_image">
+                                            <div className="item flex justify-center align-center flex-col">
+                                                    <div className="w-full flex items-center justify-center">
                                                         {item.img}
                                                     </div>
+                                                <div className="flex items-center justify-center text-center">
                                                     <div className="clients_info">
-                                                        <h4>{item.name}</h4>
-                                                        <span>{item.designation}</span>
+                                                    <a href={item.name}>See it in action</a>
+                                                <p>{item.message}</p>
                                                     </div>
                                                 </div>
                                             </div>
