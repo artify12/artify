@@ -13,7 +13,7 @@ export default function NavBar() {
                     <li><Link legacyBehavior href="/draw"><a>Draw</a></Link></li>
                     <li><Link legacyBehavior href="/"><a>Links</a></Link>
                         <ul className="submenu">
-                            <li><Link legacyBehavior href="https://t.me/goArtify"><a>Telegram</a></Link></li>
+                            <li><Link legacyBehavior href="https://t.me/artifylabs"><a>Telegram</a></Link></li>
                             <li><Link legacyBehavior href="https://twitter.com/artifyerc"><a>Twitter</a></Link></li>
                             <li><Link legacyBehavior href="https://medium.com/@artifylabs"><a>Medium</a></Link> </li>
                             <li><Link legacyBehavior href="https://artify.gitbook.io/artify-whitepaper/"><a>Whitepaper</a></Link> </li>
