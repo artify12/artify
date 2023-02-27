@@ -11,7 +11,7 @@ export default function Footer({className}) {
               <div className="row align-items-center">
                 <div className="col-xl-6 col-lg-6 col-md-6">
                   <div className="copyright_text pt-20">
-                    <p>@ 2023  Design by <span>Artify</span></p>
+                    <p><span>artifyerc@gmail.com</span></p>
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6">
