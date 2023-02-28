@@ -41,7 +41,7 @@ export default function Predictions({ predictions, submissionCount, isProcessing
               submissionCount == Object.keys(predictions).length && (
                 <div ref={scrollRef} />
               )}
-            <Prediction prediction={prediction} isProcessing={isProcessing} shouldShowMint={shouldShowMint} />
+            <Prediction prediction={prediction} isProcessing={isProcessing} shouldShowMint={shouldShowMint}/>
           </Fragment>
         ))}
     </section>
@@ -56,7 +56,6 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
   // MINT PART
   //mint part ==============================
   const [prompt, setPrompt] = useState("scooby doo");
-  const [filer, setFiler] = useState();
   const [imageBlob, setImageBlob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -83,32 +82,18 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
     //     console.log("MY BLOG " + JSON.stringify(myBlob))
     //     return uploadArtToIpfs(myBlob)
     //   });
-    const blob = new Blob([prediction.output[1]], { type: 'image/png' })
+    const blob = new Blob([prediction.output[1]], {type: 'image/png'})
+    console.log("BLOBERI: " + JSON.stringify(prediction.testing))
     return uploadArtToIpfs(blob)
     console.log("IMAGERONI: " + imageroni)
     return imageroni;
   }
-
-  useEffect(() => {
-    const mintNss = async () => {
-      if (filer && filer !== {}) {
-        const nftstorage = new NFTStorage({
-          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDk0RWI3QTQ3NDAwYzcyOGI1OEE4MTIyMENhNjRGZDMwQUUwMDcxMDMiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3NzI4OTg3MjE5MiwibmFtZSI6IkFydGlmeSJ9.n5N2aMVjzd_PCtSNmoxLJwb7HaOJ8ENOF3nHwT_mQV8'
-        })
-        const store = await nftstorage.store({
-          name: "AI NFT",
-          description: "AI generated NFT",
-          image: filer,
-        });
-        return cleanupIPFS(store.data.image.href);
-      }
-    }
-    mintNss()
-  }, [filer])
-
-
   const uploadArtToIpfs = async (myBlob) => {
     try {
+
+      const nftstorage = new NFTStorage({
+        token: process.env.NEXT_PUBLIC_NFT_STORAGE_API
+      })
 
 
       console.log(JSON.stringify(myBlob))
@@ -117,8 +102,31 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
       //   type: "image/png",
       // });
 
-      setFiler(await fetch(prediction.output[1]).then(r => r.blob()).then(blobFile => new File([blobFile], "image.png", { type: "image/png" })))
+      let file = await fetch(prediction.output[1]).then(r => r.blob()).then(blobFile => new File([blobFile], "image.png", { type: "image/png" }))
 
+      const store = await nftstorage.store({
+        name: "AI NFT",
+        description: "AI generated NFT",
+        image: file,
+      });
+      return cleanupIPFS(store.data.image.href);
+
+      const imgUrl = await axios.post('https://api.nft.storage/upload', {
+        name: 'AI NFT',
+        description: 'AI Generated NFT',
+        url: prediction.output[1]
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
+      ).then((response) => {
+        const ipfsHash = response.data.value.cid;
+        const ipfsLink = `https://ipfs.io/ipfs/${ipfsHash}`;
+        return ipfsLink
+      })
+
+      return imgUrl;
     } catch (err) {
       console.log(err);
       return null;
@@ -220,7 +228,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
           <CopyIcon className="icon" />
           {linkCopied ? "Copied!" : "Copy link"}
         </button>
-        {(shouldShowMint && !isProcessing) && <button
+        {(shouldShowMint && !isProcessing )&& <button
           className="bg-black text-white rounded-md p-2"
           onClick={() => {
             setModalOpen(true);

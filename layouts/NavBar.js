@@ -11,6 +11,13 @@ export default function NavBar() {
                     <li><Link legacyBehavior href="/#features"><a>About us</a></Link></li>
                     <li><Link legacyBehavior href="/#roadmap"><a>Roadmap</a></Link></li>
                     <li><Link legacyBehavior href="/draw"><a>Draw</a></Link></li>
+                    <li><Link legacyBehavior href="/"><a>Tools</a></Link>
+                        <ul className="submenu">
+                            <li><Link legacyBehavior href="/restore"><a>Artify Restore</a></Link></li>
+                            <li><Link legacyBehavior href="/colorfy"><a>Colorfy</a></Link></li>
+                            <li><Link legacyBehavior href="/background-remover"><a>Artify Bg Remover</a></Link> </li>
+                        </ul>
+                    </li>
                     <li><Link legacyBehavior href="/"><a>Links</a></Link>
                         <ul className="submenu">
                             <li><Link legacyBehavior href="https://t.me/artifylabs"><a>Telegram</a></Link></li>

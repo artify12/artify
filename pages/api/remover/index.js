@@ -1,0 +1,57 @@
+const REPLICATE_API_HOST = "https://api.replicate.com";
+
+import packageData from "../../../package.json";
+
+export default async function handler(req, res) {
+  if (!process.env.REPLICATE_API_TOKEN) {
+    throw new Error("The REPLICATE_API_TOKEN environment variable is not set. See README.md for instructions on how to set it.");
+  }
+  
+  const body = JSON.stringify({
+    version: "da7d45f3b836795f945f221fc0b01a6d3ab7f5e163f13208948ad436001e2255",
+    input: req.body,
+  });
+
+  const headers = {
+    Authorization: `Token ${process.env.REPLICATE_API_TOKEN}`,
+    "Content-Type": "application/json",
+    "User-Agent": `${packageData.name}/${packageData.version}`
+  }
+
+  const response = await fetch(`${REPLICATE_API_HOST}/v1/predictions`, {
+    method: "POST",
+    headers,
+    body,
+  });
+
+
+  if (response.status !== 201) {
+    let error = await response.json();
+    res.statusCode = 500;
+    res.end(JSON.stringify({ detail: error.detail }));
+    return;
+  }
+
+  const prediction = await response.json();
+  res.statusCode = 201;
+  const url = prediction.urls.get
+  console.log(url)
+  const imageURL = await fetch(url, {
+    method: "GET",
+    headers: {
+      Authorization: `Token ${process.env.REPLICATE_API_TOKEN}`,
+    }
+  })
+  let ans = await imageURL.json()
+
+  console.log("hello",ans)
+  res.end(JSON.stringify(ans));
+}
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "10mb",
+    },
+  },
+};
