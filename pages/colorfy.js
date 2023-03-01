@@ -109,7 +109,7 @@ export default function Colorfy() {
                             <div className="!grid !h-full !place-items-center">
                                 <Loader />
                             </div>
-                            <p className="pt-4">Processing request...</p>
+                            <p>Processing request...</p>
                             <p className="pt-2">This might take some time</p>
                         </div>
                     )}
