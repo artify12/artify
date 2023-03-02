@@ -93,7 +93,7 @@ export default function Prompter() {
             <main className="container max-w-[1024px] mx-auto p-5 !my-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "60px !important" }}>
                 <h1 className="text-3xl font-bold my-5">Prompter</h1>
                 <p className="mb-5">
-                    Prompter is a tool by Artify that approximate text prompts that can be used to recreate similar looking versions of the image.
+                    Prompter is a tool by Artify that generates text prompts that can be used to recreate similar looking versions of the image.
                     Prompter can also be used as a learning tool, where the user has the insight on how the good structured and descriptive 
                     prompts for generating AI images look like.
                 </p>
