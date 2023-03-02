@@ -23,6 +23,8 @@ export default function NavBarMobile({ metismenu }) {
                             <li><Link legacyBehavior href="/restore"><a>Artify Restore</a></Link></li>
                             <li><Link legacyBehavior href="/colorfy"><a>Colorfy</a></Link></li>
                             <li><Link legacyBehavior href="/background-remover"><a>Artify Bg Remover</a></Link> </li>
+                            <li><Link legacyBehavior href="/prompter"><a>Prompter</a></Link></li>
+                            <li><Link legacyBehavior href="/reroll"><a>Reroll</a></Link></li>
                         </ul>
                     </li>
                     <li><Link legacyBehavior href="/"><a>Links</a></Link>

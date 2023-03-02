@@ -8,8 +8,7 @@ const HOST = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : "http://localhost:3000";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-export default function Restore() {
-    const token = "bfec21fbab6d63c7e12da669e65d0b443a1d70a3";
+export default function Reroll() {
     const [imageFile, setImageFile] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -18,13 +17,14 @@ export default function Restore() {
     const prompt = "Hello"
     const handleSubmit = async (e) => {
         async function process(image) {
-            const response = await fetch("/api/restore", {
+            const response = await fetch("/api/reroll", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    image
+                    input_image: image,
+                    model_name: 'Stable'
                 }),
             });
             let prediction = await response.json();
@@ -40,7 +40,7 @@ export default function Restore() {
                 prediction.status !== "failed"
             ) {
                 await sleep(2000);
-                const response = await fetch("/api/restore/" + prediction.id);
+                const response = await fetch("/api/reroll/" + prediction.id);
                 prediction = await response.json();
                 if (response.status !== 200) {
                     setError(prediction.detail);
@@ -51,7 +51,7 @@ export default function Restore() {
                 console.log(prediction)
             }
             await sleep(2000);
-            const response2 = await fetch("/api/restore/" + prediction.id);
+            const response2 = await fetch("/api/reroll/" + prediction.id);
             prediction = await response2.json();
             if (response2.status !== 200) {
                 setError(prediction.detail);
@@ -91,17 +91,15 @@ export default function Restore() {
             </Head>
             <Header style1 style={{ paddingBottom: '120px !important;' }} />
             <main className="container max-w-[1024px] mx-auto p-5 !my-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "120px !important" }}>
-                <h1 className="text-3xl font-bold my-5">Restore</h1>
+                <h1 className="text-3xl font-bold my-5">Reroll</h1>
                 <p className="mb-5">
-                    Image restoration tool by Artify. Image restoration is a long-standing low-level vision problem that aims
-                    to restore high-quality images from low-quality images (e.g., downscaled, noisy and compressed images).
-                    We restore images by conducting experiments on three representative tasks: image super-resolution (including classical, lightweight and real-world image super-resolution),
-                    image denoising (including grayscale and color image denoising) and JPEG compression artifact reduction.
-                    Simply upload your photo, and we will make it better!
+                    Reroll Tool by Artify allows you to generate variations of an image passed. Forgetting a prompt for a creation you would like
+                    to modify is no longer an issue since the Reroll Tool automatically applies similar styles and prompts that it extracts from an image.
+                    You can also use this tool to generate new images based on any other image you like.
                 </p>
                 <form onSubmit={handleSubmit} className="flex gap-5 w-full flex-wrap justify-center pb-5">
                     <input type="file" id="imageUpload" onChange={(e) => setImageFile(e.target.files[0])} />
-                    <button type="submit" className="bg-zinc-300 rounded-md px-5 hover:bg-zinc-500 hover:text-white transition-colors">Restore!</button>
+                    <button type="submit" className="bg-zinc-300 rounded-md px-5 hover:bg-zinc-500 hover:text-white transition-colors">reroll!</button>
                 </form>
                 <div className="pb-16">
                     {loading && (
