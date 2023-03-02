@@ -107,7 +107,8 @@ export default function Restore() {
                     {loading && (
                         <div className="mb-5 w-full flex justify-center flex-col items-center">
 
-                            <div className="!grid !h-full !place-items-center">
+                            
+                        <div className="flex items-center justify-center">
                                 <Loader />
                             </div>
                             <p>Processing request...</p>
