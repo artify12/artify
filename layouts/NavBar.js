@@ -26,7 +26,9 @@ export default function NavBar() {
                             <li><Link legacyBehavior href="https://artify.gitbook.io/artify-whitepaper/"><a>Whitepaper</a></Link> </li>
                             <li><Link legacyBehavior href="https://www.dextools.io/app/en/ether/pair-explorer/0xf43e889444e95a0429c32b0b601dc16edf90fdbf"><a>Dextools</a></Link> </li>
                             <li><Link legacyBehavior href="https://etherscan.io/address/0xa41161af8d4ee421ba5fed4328f2b12034796a21"><a>Contract</a></Link></li>
-                        </ul>
+                            <li><Link legacyBehavior href="https://tiktok.com/@artify_labs"><a>Tiktok</a></Link></li>
+                            <li><Link legacyBehavior href="https://instagram.com/artifyerc"><a>Instagram</a></Link></li>
+                            <li><Link legacyBehavior href="https://facebook.com/artifylabs"><a>Facebook</a></Link> </li></ul>
                     </li>
                 </ul>
             </nav>
