@@ -90,7 +90,7 @@ export default function Reroll() {
                 <title>{pkg.appName}</title>
             </Head>
             <Header style1 style={{ paddingBottom: '120px !important;' }} />
-            <main className="container max-w-[1024px] mx-auto p-5 !my-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "120px !important" }}>
+            <main className="container max-w-[1024px] mx-auto p-5 !my-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "60px !important" }}>
                 <h1 className="text-3xl font-bold my-5">Reroll</h1>
                 <p className="mb-5">
                     Reroll Tool by Artify allows you to generate variations of an image passed. Forgetting a prompt for a creation you would like
@@ -105,7 +105,7 @@ export default function Reroll() {
                     {loading && (
                         <div className="mb-5 w-full flex justify-center flex-col items-center">
 
-                            <div className="!grid !h-full !place-items-center">
+                        <div className="flex items-center justify-center">
                                 <Loader />
                             </div>
                             <p>Processing request...</p>
