@@ -32,6 +32,7 @@ export default function NavBar() {
                             <li><Link legacyBehavior href="https://instagram.com/artifyerc"><a>Instagram</a></Link></li>
                             <li><Link legacyBehavior href="https://facebook.com/artifylabs"><a>Facebook</a></Link> </li></ul>
                     </li>
+                    <li><Link legacyBehavior href="mailto:support@artifylabs.io"><a>Support</a></Link></li>
                 </ul>
             </nav>
 
