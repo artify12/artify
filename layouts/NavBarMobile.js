@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import MetisMenu from 'metismenujs';
 import Link from 'next/link'
 
@@ -18,7 +18,9 @@ export default function NavBarMobile({ metismenu }) {
                     <li><Link legacyBehavior href="/#features"><a>About us</a></Link></li>
                     <li><Link legacyBehavior href="/#roadmap"><a>Roadmap</a></Link></li>
                     <li><Link legacyBehavior href="/draw"><a>Draw</a></Link></li>
-                    <li><Link legacyBehavior href="/"><a>Tools</a></Link>
+                    <li>
+                        <a className='cursor-pointer' onClick={() => router.push("/#howtobuy")}>Buy $AFY</a></li>
+                    <li className='text-white'>Tools
                         <ul className="submenu">
                             <li><Link legacyBehavior href="/restore"><a>Artify Restore</a></Link></li>
                             <li><Link legacyBehavior href="/colorfy"><a>Colorfy</a></Link></li>
@@ -27,7 +29,7 @@ export default function NavBarMobile({ metismenu }) {
                             <li><Link legacyBehavior href="/reroll"><a>Reroll</a></Link></li>
                         </ul>
                     </li>
-                    <li><Link legacyBehavior href="/"><a>Links</a></Link>
+                    <li className='text-white'>Links
                         <ul className="submenu">
                             <li><Link legacyBehavior href="https://t.me/artifylabs"><a>Telegram</a></Link></li>
                             <li><Link legacyBehavior href="https://twitter.com/artifyerc"><a>Twitter</a></Link></li>
