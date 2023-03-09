@@ -17,6 +17,7 @@ const nextConfig = {
       "user-images.githubusercontent.com",
       "upcdn.io",
       "firebasestorage.googleapis.com",
+      "images.unsplash.com"
     ],
   },
 };
