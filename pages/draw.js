@@ -12,6 +12,7 @@ import pkg from "../package.json";
 import sleep from "lib/sleep";
 import Layout1 from "layouts/Layout1";
 import Header from "layouts/Header";
+import Footer from "../layouts/Footer";
 
 const HOST = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -27,7 +28,6 @@ export default function Draw() {
   const [initialPrompt] = useState(seed.prompt);
   const [scribble, setScribble] = useState(null);
   const [file, setFile] = useState(null);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,15 +95,15 @@ export default function Draw() {
         <meta name="description" content={pkg.appMetaDescription} />
         <meta property="og:title" content={pkg.appName} />
         <meta property="og:description" content={pkg.appMetaDescription} />
-        <meta
-          property="og:image"
-          content={`${HOST}/preview.png`}
-        />
+        <meta property="og:image" content={`${HOST}/preview.png`} />
         <title>{pkg.appName}</title>
       </Head>
-      <Header style1 style={{ paddingBottom: '120px !important;' }} />
-      <main className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "120px !important" }}>
-        <div className="container max-w-[512px] mx-auto">
+      <Header style1 style={{ paddingBottom: "120px !important;" }} />
+      <main
+        className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]"
+        style={{ padding: "20px !important;", paddingTop: "120px !important" }}
+      >
+        <div className="container max-w-[512px] mx-auto pb-60">
           <hgroup>
             <h1 className="text-center text-5xl font-bold m-4">
               {pkg.appName}
@@ -129,14 +129,16 @@ export default function Draw() {
 
           <Error error={error} />
         </div>
-
-        <Predictions
-          predictions={predictions}
-          isProcessing={isProcessing}
-          submissionCount={submissionCount}
-          file={file}
-          shouldShowMint={true}
-        />
+        <div className="-mt-40">
+          <Predictions
+            predictions={predictions}
+            isProcessing={isProcessing}
+            submissionCount={submissionCount}
+            file={file}
+            shouldShowMint={true}
+          />
+        </div>
+        <div className="pt-62"></div>
       </main>
 
       <Script src="https://js.upload.io/upload-js-full/v1" />

@@ -17,8 +17,12 @@ module.exports = {
         bgshade: "rgba(0, 0, 0, 0.05)",
       },
       cursor: {
-        crosshair:
-          "url(https://user-images.githubusercontent.com/14149230/219877313-3eb493fa-4f48-456d-af34-e74ce854befb.png) 0 25, crosshair",
+        brush:
+          "url(https://user-images.githubusercontent.com/31418038/222933655-ef5ddf50-f81a-454d-90bd-950655d6890f.png) 0 25, crosshair",
+        pencil:
+          "url(https://user-images.githubusercontent.com/31418038/222928792-b124c967-7337-45f4-b68e-83c6d1a4abb8.png) 0 25, crosshair",
+        eraser:
+          "url(https://user-images.githubusercontent.com/31418038/222933699-9f640b67-a725-464f-be46-c3b13faaec70.png) 0 25, crosshair",
       },
     },
   },

@@ -8,9 +8,12 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { NFTStorage } from "nft.storage";
 
-
-export default function Predictions({ predictions, submissionCount, isProcessing, shouldShowMint }) {
-  console.log(JSON.stringify(predictions))
+export default function Predictions({
+  predictions,
+  submissionCount,
+  isProcessing,
+  shouldShowMint,
+}) {
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -41,17 +44,24 @@ export default function Predictions({ predictions, submissionCount, isProcessing
               submissionCount == Object.keys(predictions).length && (
                 <div ref={scrollRef} />
               )}
-            <Prediction prediction={prediction} isProcessing={isProcessing} shouldShowMint={shouldShowMint}/>
+            <Prediction
+              prediction={prediction}
+              isProcessing={isProcessing}
+              shouldShowMint={shouldShowMint}
+            />
           </Fragment>
         ))}
     </section>
   );
 }
 
-export function Prediction({ prediction, showLinkToNewScribble = false, isProcessing, shouldShowMint }) {
-
-
-  console.log(shouldShowMint)
+export function Prediction({
+  prediction,
+  showLinkToNewScribble = false,
+  isProcessing,
+  shouldShowMint,
+}) {
+  console.log(shouldShowMint);
 
   // MINT PART
   //mint part ==============================
@@ -64,7 +74,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
   const [desc, setDesc] = useState("");
   const [minted, setMinted] = useState(false);
   const cleanupIPFS = (url) => {
-    console.log("URL IS BRE: " + url)
+    console.log("URL IS BRE: " + url);
     if (url.includes("ipfs://")) {
       return url.replace("ipfs://", "https://ipfs.io/ipfs/");
     }
@@ -82,27 +92,29 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
     //     console.log("MY BLOG " + JSON.stringify(myBlob))
     //     return uploadArtToIpfs(myBlob)
     //   });
-    const blob = new Blob([prediction.output[1]], {type: 'image/png'})
-    console.log("BLOBERI: " + JSON.stringify(prediction.testing))
-    return uploadArtToIpfs(blob)
-    console.log("IMAGERONI: " + imageroni)
+    const blob = new Blob([prediction.output[1]], { type: "image/png" });
+    console.log("BLOBERI: " + JSON.stringify(prediction.testing));
+    return uploadArtToIpfs(blob);
+    console.log("IMAGERONI: " + imageroni);
     return imageroni;
-  }
+  };
   const uploadArtToIpfs = async (myBlob) => {
     try {
-
       const nftstorage = new NFTStorage({
-        token: process.env.NEXT_PUBLIC_NFT_STORAGE_API
-      })
+        token: process.env.NEXT_PUBLIC_NFT_STORAGE_API,
+      });
 
-
-      console.log(JSON.stringify(myBlob))
+      console.log(JSON.stringify(myBlob));
 
       // const file = new File([myBlob], "image.png", {
       //   type: "image/png",
       // });
 
-      let file = await fetch(prediction.output[1]).then(r => r.blob()).then(blobFile => new File([blobFile], "image.png", { type: "image/png" }))
+      let file = await fetch(prediction.output[1])
+        .then((r) => r.blob())
+        .then(
+          (blobFile) => new File([blobFile], "image.png", { type: "image/png" })
+        );
 
       const store = await nftstorage.store({
         name: "AI NFT",
@@ -111,20 +123,25 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
       });
       return cleanupIPFS(store.data.image.href);
 
-      const imgUrl = await axios.post('https://api.nft.storage/upload', {
-        name: 'AI NFT',
-        description: 'AI Generated NFT',
-        url: prediction.output[1]
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }
-      ).then((response) => {
-        const ipfsHash = response.data.value.cid;
-        const ipfsLink = `https://ipfs.io/ipfs/${ipfsHash}`;
-        return ipfsLink
-      })
+      const imgUrl = await axios
+        .post(
+          "https://api.nft.storage/upload",
+          {
+            name: "AI NFT",
+            description: "AI Generated NFT",
+            url: prediction.output[1],
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          const ipfsHash = response.data.value.cid;
+          const ipfsLink = `https://ipfs.io/ipfs/${ipfsHash}`;
+          return ipfsLink;
+        });
 
       return imgUrl;
     } catch (err) {
@@ -155,9 +172,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
           chain: "polygon",
           name: name?.length > 0 ? name : "Artify Art",
           description:
-            desc?.length > 0
-              ? desc
-              : "Artify AI generated NFT minted",
+            desc?.length > 0 ? desc : "Artify AI generated NFT minted",
           mint_to_address:
             address?.length > 0
               ? address
@@ -228,14 +243,17 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
           <CopyIcon className="icon" />
           {linkCopied ? "Copied!" : "Copy link"}
         </button>
-        {(shouldShowMint && !isProcessing )&& <button
-          className="bg-black text-white rounded-md p-2"
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        >
-          Mint
-        </button>}
+        {/*mint button*/}
+        {/*{shouldShowMint && !isProcessing && (*/}
+        {/*  <button*/}
+        {/*    className="bg-black text-white rounded-md p-2"*/}
+        {/*    onClick={() => {*/}
+        {/*      setModalOpen(true);*/}
+        {/*    }}*/}
+        {/*  >*/}
+        {/*    Mint*/}
+        {/*  </button>*/}
+        {/*)}*/}
         {minted && (
           <div className="bg-slate-800 text-white underline p-3 border-2 border-yellow-200 cursor-pointer">
             <a

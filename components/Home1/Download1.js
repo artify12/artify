@@ -1,9 +1,22 @@
 import React from 'react'
 
 export default function Download1() {
+    //generate an array with random 5 numbers
+    const randomNumbers = Array.from({ length: 5 }, () => Math.floor(Math.random() * 100));
+
+
+
+
+
+
+
+
+
+
     return (
         <>
         {/* <!-- DOWNLOAD START  --> */}
+
         <div className="download-area pt-50 mt-100">
             <div className="container">
                 <div className="row">

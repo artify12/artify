@@ -6,8 +6,8 @@ export const config = {
   runtime: "edge",
 };
 
-// This endpoint take a query parameter `id` which is the ID of a prediction
-// and returns an Open Graph image for that prediction
+// This endpoint taks ane a query parameter `id` which is the ID of a prediction
+// // and return Open Graph image for that prediction
 export default async function handler(req) {
   const { searchParams } = req.nextUrl;
   const predictionId = searchParams.get("id");
