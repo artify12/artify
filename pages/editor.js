@@ -4,6 +4,11 @@ import { UIEvent, PhotoEditorSDKUI, ContainedPrimaryButton } from "photoeditorsd
 import NoSSRWrapper from 'components/NoSSRWrapper';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Head from 'next/head';
+import pkg from "../package.json";
+const HOST = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
 
 const ExportButton = styled(ContainedPrimaryButton)`
 	background: $themegreen;
@@ -60,7 +65,7 @@ export class PhotoEditorSDK extends React.Component {
             license: '{"api_token":"bzgD_7ZUUOW6ZIMFXdCibw","app_identifiers":["localhost","artifylabs.io"],"available_actions":[],"domains":["https://api.photoeditorsdk.com"],"enterprise_license":false,"expires_at":null,"features":["camera","library","export","customassets","whitelabel","adjustment","brush","filter","focus","frame","overlay","sticker","text","textdesign","transform"],"issued_at":1678641257,"minimum_sdk_version":"1.0","owner":"Artify","platform":"HTML5","products":["pesdk"],"version":"2.4","signature":"kamNHxAXrRT+kzNEYgdPeoeyajmjQabcXMfD+6iy0lzsCVdC2LmEdIHApGBDXOm9CDzLC1Kfb+1YH3GZZqokE9pULq0PJpBd+m6VZ/Ly8ooWOsOhPbnrO15wtD85K9E9WvfEJgnAhHfqYU1fp2ijvzkXsYDgomtyg0kiE+i3IKDvt60lAB+Pr+FjizuEz6pTTNlFm1VSk7UItnKMOvRhkp1mrC5z9BJGdV90D6dQK26dHHxRG31gZftC+7bGLTx5X62TaKH6CbyEcBjCASQvKYaoFp1PEgFrg10P37shuN5OKImVR8Kna2bRrOumWM2PRJFvXL//GrQHrY3tTvflp7gjQDmQfQp40TYHNm/Oo8qvO1zO7Qkq3mMZmFvhp33q/RDb/Xe9dkJTu9M5vV7P70Yj4Ef8njo84SQL8KvbXMvEnVqTwDYnb7mmIDgK+98zouMtlhyVpuOh589ZdpzbXTITpLHx7chK/kIw5ZLvD04SGXRI2kD54rqjTJJKuWCfMyXAWn3wjW7ArqYmQO4PcEdja9zQhC0T2mt7cuIzP7m2J4IVHqkU0QqREKtKN0/DyrVGSSUbFbBylZBemPsqWuLaoUHpUsti//cUlTGsVsButcNPVpt2AyFRFDkw2iGDQYwotrveCwn8pZVW5nBMUBLX9zUeW0AgsG3oHgzq/3w="}',
             theme: 'light',
             filename: 'artified-art',
-            mainCanvasActions: ['export', 'close','undo', 'redo'],
+            mainCanvasActions: ['export', 'close', 'undo', 'redo'],
             enableZoom: true,
             controls: {
 
@@ -159,10 +164,22 @@ export class PhotoEditorSDK extends React.Component {
 
     render() {
         return (
-            <div
-                id="editor"
-                style={{ width: "100vw", height: "100vh" }}
-            />
+            <>
+                <Head>
+                    <meta name="description" content={pkg.appMetaDescription} />
+                    <meta property="og:title" content={pkg.appName} />
+                    <meta property="og:description" content={pkg.appMetaDescription} />
+                    <meta
+                        property="og:image"
+                        content={`${HOST}/preview.png`}
+                    />
+                    <title>{pkg.appName}</title>
+                </Head>
+                <div
+                    id="editor"
+                    style={{ width: "100vw", height: "100vh" }}
+                />
+            </>
         );
     }
 }
