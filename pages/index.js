@@ -7,11 +7,12 @@ import Testimonial1 from "../components/Home1/Testimonial1";
 import Try1 from "../components/Home1/Try1";
 import Layout1 from "../layouts/Layout1";
 import pkg from "../package.json";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const HOST = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
+
 
 export default function Home() {
   return (
