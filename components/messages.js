@@ -26,7 +26,6 @@ export default function Messages({ events, isProcessing, onUndo }) {
                         ? `The result of the prompt "${ev.prompt}" on the previous image`
                         : "The source image"
                     }
-                    priority={true}
                     className="max-h-[512px] max-w-full aspect-video object-contain"
                     src={ev.image}
                   />
