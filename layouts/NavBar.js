@@ -31,11 +31,10 @@ export default function NavBar() {
               <a>Tools</a>
             </Link>
             <ul className="submenu">
-              <li>
-                <Link legacyBehavior href="/edit">
-                  <a>Artify Edit</a>
-                </Link>
-              </li>
+              <li><Link legacyBehavior href="/editor"><a>Artify Editor</a></Link></li>
+
+              <li><Link legacyBehavior href="/detailing"><a>Artify Detailing</a></Link></li>
+
               <li>
                 <Link legacyBehavior href="/restore">
                   <a>Artify Restore</a>

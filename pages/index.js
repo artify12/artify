@@ -8,6 +8,7 @@ import Try1 from "../components/Home1/Try1";
 import Layout1 from "../layouts/Layout1";
 import pkg from "../package.json";
 import React, { useEffect } from "react";
+import BuyAfy from "components/Home1/BuyAfy";
 
 const HOST = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -30,6 +31,7 @@ export default function Home() {
         <FeaturesContent />
         <Testimonials />
         <Testimonial1 />
+        <BuyAfy/>
         <Try1 />
       </Layout1>
     </>
