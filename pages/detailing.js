@@ -22,7 +22,7 @@ export const appName = "Artify Edit";
 export const appSubtitle = "Give AI instructions on how to edit your images.";
 export const appMetaDescription = "Give AI instructions on how to edit your images.";
 
-export default function Edit() {
+export default function Detailing() {
     const [events, setEvents] = useState([]);
     const [predictions, setPredictions] = useState([]);
     const [error, setError] = useState(null);

@@ -20,9 +20,9 @@ export default function NavBarMobile({ metismenu }) {
                     <li><Link legacyBehavior href="/draw"><a>Draw</a></Link></li>
                     <li>
                         <a className='cursor-pointer' onClick={() => router.push("/#howtobuy")}>Buy $AFY</a></li>
-                    <li className='text-white'><Link legacyBehavior href="reroll"><a>Tools</a></Link>
+                    <li className='text-white'><Link legacyBehavior href="/editor"><a>Tools</a></Link>
                         <ul className="submenu">
-                            {/* <li><Link legacyBehavior href="/editor"><a>Artify Editor</a></Link></li> */}
+                            <li><Link legacyBehavior href="/editor"><a>Artify Editor</a></Link></li>
                             <li><Link legacyBehavior href="/reroll"><a>Reroll</a></Link></li>
                             <li><Link legacyBehavior href="/background-remover"><a>Artify Bg Remover</a></Link> </li>
                             <li><Link legacyBehavior href="/detailing"><a>Artify Detailing</a></Link></li>
